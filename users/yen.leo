@@ -310,7 +310,7 @@ print("hello")
 Created by [s40523245](http://chiamingyen.github.io/kmolab/blog/)
 &lt;/small&gt;
 
-[40523245](blog/index.html)
+[s40523245](blog/index.html)
 
 </t>
 <t tx="amd.20161004104641.1">&lt;section data-markdown&gt;
