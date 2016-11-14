@@ -133,7 +133,7 @@
 <v t="yen.20161011150901.2"><vh>網際動畫範例</vh></v>
 </v>
 </v>
-<v t="yen.20161016012809.1" a="E"><vh>各式內容引用範例</vh>
+<v t="yen.20161016012809.1"><vh>各式內容引用範例</vh>
 <v t="yen.20161016012809.2" a="E"><vh>導入數學符號與方程式</vh>
 <v t="yen.20161016012809.3"><vh>LaTeX 格式方程式</vh></v>
 </v>
@@ -149,7 +149,7 @@
 </v>
 </v>
 </v>
-<v t="leo.20151213230723.1"><vh>Pelican 設定</vh>
+<v t="leo.20151213230723.1" a="E"><vh>Pelican 設定</vh>
 <v t="leo.20151213230957.1"><vh>文章 Date 設定</vh></v>
 <v t="leo.20151213230729.1"><vh>使用 summary plugin</vh></v>
 </v>
@@ -168,6 +168,7 @@
 <v t="leo.20161014142409.1"><vh>@edit 20161014.md</vh></v>
 <v t="leo.20161024160947.1"><vh>@edit 20161024.md</vh></v>
 <v t="leo.20161031141953.1"><vh>@edit 20161031.md</vh></v>
+<v t="leo.20161114144452.1"><vh>@edit 20161114.md</vh></v>
 </v>
 </v>
 </v>
@@ -307,10 +308,10 @@ print("hello")
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [s40523245](http://chiamingyen.github.io/kmolab/blog/)
+Created by [40523245](http://s40523245.github.io/kmolab/blog/)
 &lt;/small&gt;
 
-[s40523245](blog/index.html)
+[40523245](blog/index.html)
 
 </t>
 <t tx="amd.20161004104641.1">&lt;section data-markdown&gt;
