@@ -169,6 +169,7 @@
 <v t="leo.20161024160947.1"><vh>@edit 20161024.md</vh></v>
 <v t="leo.20161031142610.1"><vh>@edit 20161031.md</vh></v>
 <v t="leo.20161114144449.1"><vh>@edit 20161114.md</vh></v>
+<v t="leo.20161121141252.1"><vh>@edit 20161121.md</vh></v>
 </v>
 </v>
 </v>
@@ -184,6 +185,12 @@
 <v t="leo.20161107164237.3"><vh>Recovered node "封面投影片內容" from @clean index.html</vh>
 <v t="leo.20161107164237.4"><vh>old:封面投影片內容</vh></v>
 <v t="leo.20161107164237.5"><vh>new:封面投影片內容</vh></v>
+</v>
+</v>
+<v t="leo.20161121135527.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20161121135527.3"><vh>Recovered node "封面投影片內容" from @clean index.html</vh>
+<v t="leo.20161121135527.4"><vh>old:封面投影片內容</vh></v>
+<v t="leo.20161121135527.5"><vh>new:封面投影片內容</vh></v>
 </v>
 </v>
 </vnodes>
@@ -314,10 +321,11 @@ print("hello")
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [40523245](https://s40523245.github.io/2016fallcp_hw/blog/)
+Created by [40523245](http://chiamingyen.github.io/kmolab/blog/)
 &lt;/small&gt;
 
 [40523245](blog/index.html)
+
 </t>
 <t tx="amd.20161004104641.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
@@ -516,6 +524,42 @@ Created by [40523209](https://s40523209.github.io/2016fallcp_hw/blog/)
 &lt;/small&gt;
 
 [40523209](blog/index.html)
+</t>
+<t tx="leo.20161121135527.2"></t>
+<t tx="leo.20161121135527.3">(uncached) amd.20161004095719.2
+Diff...
+  # 2016Fall 計算機程式課程
+  
+  ### 虎科大機械設計工程系
+  
+  &lt;small&gt;
+- Created by [40523245](http://chiamingyen.github.io/kmolab/blog/)
++ Created by [40523245](https://s40523245.github.io/2016fallcp_hw/blog/)
+  &lt;/small&gt;
+  
+  [40523245](blog/index.html)
+- 
+</t>
+<t tx="leo.20161121135527.4"># 2016Fall 計算機程式課程
+
+### 虎科大機械設計工程系
+
+&lt;small&gt;
+Created by [40523245](https://s40523245.github.io/2016fallcp_hw/blog/)
+&lt;/small&gt;
+
+[40523245](blog/index.html)
+</t>
+<t tx="leo.20161121135527.5"># 2016Fall 計算機程式課程
+
+### 虎科大機械設計工程系
+
+&lt;small&gt;
+Created by [40523245](http://chiamingyen.github.io/kmolab/blog/)
+&lt;/small&gt;
+
+[40523245](blog/index.html)
+
 </t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
