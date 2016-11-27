@@ -1,4 +1,4 @@
-print("第三週")
+print ("Hello World!")
 thetext = input("Enter some text ")
 print ("This is what you entered:")
 print (thetext)
