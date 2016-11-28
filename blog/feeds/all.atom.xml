@@ -9,7 +9,7 @@
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
 &lt;/script&gt;
 
-&lt;pre class="brush:python"&gt;
+&lt;pre class="brush: python"&gt;
 
 &lt;!-- 啟動 Brython --&gt;
 &lt;script&gt;
@@ -1544,7 +1544,7 @@ ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
 
-&lt;/script&gt;</summary><category term="使用導引"></category><category term="創造力"></category><category term="表達能力"></category><category term="協同設計"></category></entry><entry><title>w10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/script&gt;</summary><category term="使用導引"></category><category term="創造力"></category><category term="表達能力"></category><category term="協同設計"></category></entry><entry><title>w10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>s40523245</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程,導入資料庫,啟動,然後引用各種模組開始繪圖&lt;/p&gt;
@@ -1627,7 +1627,1094 @@ ctx.strokeStyle = "blue"
 # 實際執行畫線
 ctx.stroke()
 ctx.closePath()
-&lt;/script&gt;</summary><category term="使用導引"></category><category term="創造力"></category><category term="表達能力"></category><category term="協同設計"></category></entry><entry><title>2016Fall 程式練習題-12345</title><link href="./2016fall-cheng-shi-lian-xi-ti-12345.html" rel="alternate"></link><published>2016-10-31T12:00:00+08:00</published><updated>2016-10-31T12:00:00+08:00</updated><author><name>s40523239</name></author><id>tag:,2016-10-31:./2016fall-cheng-shi-lian-xi-ti-12345.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;canvas id="japanflag3" width="600" height="600"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "15px Arial"
+ctx.fillText("A Major", 105, 70)
+ctx.arc(140, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "15px Arial"
+ctx.fillText("1", 135, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 155, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 175, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(120, 85, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(200, 85, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 85, 7, 0, 2*math.pi, False)
+ctx.moveTo(94, 79)
+ctx.lineTo(106, 91)
+ctx.moveTo(106, 79)
+ctx.lineTo(94, 91)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+&lt;/script&gt;
+
+&lt;canvas id="japanflag3" width="600" height="600"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(229, 100+i*30)
+    ctx.lineTo(331, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(230+i*20, 100)
+    ctx.lineTo(230+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "15px Arial"
+ctx.fillText("C Major", 235, 70)
+ctx.arc(310, 115, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "15px Arial"
+ctx.fillText("1", 305, 120)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(270, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 265, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(250, 175, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 245, 180)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(330, 85, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(290, 85, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 85, 7, 0, 2*math.pi, False)
+ctx.moveTo(234, 79)
+ctx.lineTo(226, 91)
+ctx.moveTo(226, 79)
+ctx.lineTo(234, 91)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# 以下將 canvas 畫布內容轉為 img tag, 並且顯示在 container 物件
+img = canvas.toDataURL("image/png")
+# 利用 re.sub, 將原本要直接開圖檔的 data:image 標頭, 改為 data:application/octet-stream, 可直接下載存檔
+# 使用 re 模組之前必須先 import re
+img = re.sub("^data:image\/[^;]", "data:application/octet-stream", img)
+# 宣告 anchor markup attribute download, 可以指定下載儲存檔名
+container &lt;= html.A("save image", href=img, download="guitar_chord.png")
+&lt;/script&gt;
+
+&lt;canvas id="japanflag3" width="600" height="600"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(359, 100+i*30)
+    ctx.lineTo(461, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(360+i*20, 100)
+    ctx.lineTo(360+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "15px Arial"
+ctx.fillText("G Major", 365, 70)
+ctx.arc(380, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 375, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(360, 175, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 355, 180)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(440, 175, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 435, 180)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(460, 175, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("4", 455, 180)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(400, 85, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(420, 85, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+&lt;/script&gt;
+
+&lt;canvas id="japanflag3" width="600" height="600"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 290+i*30)
+    ctx.lineTo(201, 290+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 290)
+    ctx.lineTo(100+i*20, 410)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "15px Arial"
+ctx.fillText("D Major", 105, 260)
+ctx.arc(160, 335, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 155, 340)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 365, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 175, 370)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(200, 335, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 195, 340)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(140, 275, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 275, 7, 0, 2*math.pi, False)
+ctx.moveTo(94, 269)
+ctx.lineTo(106, 281)
+ctx.moveTo(106, 269)
+ctx.lineTo(94, 281)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(70, 275, 7, 0, 2*math.pi, False)
+ctx.moveTo(114, 269)
+ctx.lineTo(126, 281)
+ctx.moveTo(126, 269)
+ctx.lineTo(114, 281)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;canvas id="japanflag3" width="600" height="600"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(229, 290+i*30)
+    ctx.lineTo(331, 290+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(230+i*20, 290)
+    ctx.lineTo(230+i*20, 410)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "15px Arial"
+ctx.fillText("E Major", 245, 260)
+ctx.arc(290, 305, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 285, 310)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(250, 335, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 245, 340)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(270, 335, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 265, 340)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(330, 275, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(310, 275, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 85, 7, 0, 2*math.pi, False)
+ctx.moveTo(224, 269)
+ctx.lineTo(236, 281)
+ctx.moveTo(236, 269)
+ctx.lineTo(224, 281)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+&lt;/script&gt;
+
+&lt;canvas id="japanflag3" width="600" height="600"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(359, 290+i*30)
+    ctx.lineTo(461, 290+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(360+i*20, 290)
+    ctx.lineTo(360+i*20, 410)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "15px Arial"
+ctx.fillText("Cmaj7", 375, 260)
+ctx.arc(400, 335, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 395, 340)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(380, 365, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 375, 370)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(420, 275, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(460, 275, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(440, 275, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 85, 7, 0, 2*math.pi, False)
+ctx.moveTo(354, 269)
+ctx.lineTo(366, 281)
+ctx.moveTo(366, 269)
+ctx.lineTo(354, 281)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+&lt;/script&gt;</summary><category term="使用導引"></category><category term="創造力"></category><category term="表達能力"></category><category term="協同設計"></category></entry><entry><title>2016Fall CP 學員連結</title><link href="./2016fall-cp-xue-yuan-lian-jie.html" rel="alternate"></link><published>2016-11-05T12:00:00+08:00</published><updated>2016-11-05T12:00:00+08:00</updated><author><name>s40523245</name></author><id>tag:,2016-11-05:./2016fall-cp-xue-yuan-lian-jie.html</id><summary type="html">&lt;p&gt;利用計算機程式兩班選課名單可以產生個別成員的倉儲、筆記、投影片與網誌.&lt;/p&gt;
+
+
+&lt;p&gt;有關 Brython html 模組的用法, 請參考 &lt;a href="http://www.brython.info/static_doc/en/html.html"&gt;http://www.brython.info/static_doc/en/html.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;計算機程式甲班成員連結:&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
+
+&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
+
+&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
+
+&lt;p&gt;甲班學員投影片:&lt;/p&gt;
+&lt;div id="container1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+from browser import document, html
+container1 = document['container1']
+adata = open("./../users/a.txt").read()
+alist = adata.splitlines()
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container1 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+甲班學員網誌:&lt;/p&gt;
+&lt;div id="container2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script2"&gt;
+from browser import document, html
+from script1 import alist
+container2 = document['container2']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw/blog")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container2 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+甲班學員 wiki:&lt;/p&gt;
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script3"&gt;
+from browser import document, html
+from script1 import alist
+container3 = document['container3']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://github.com/s"+str(stud_num)+"/2016fallcp_hw/wiki")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container3 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+甲班學員倉儲:&lt;/p&gt;
+&lt;div id="container4"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script4"&gt;
+from browser import document, html
+from script1 import alist
+container4 = document['container4']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://github.com/s"+str(stud_num)+"/2016fallcp_hw")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container4 &lt;= mlink
+&lt;/script&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;乙班學員投影片:&lt;/p&gt;
+&lt;div id="container5"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script5"&gt;
+from browser import document, html
+container5 = document['container5']
+adata = open("./../users/b.txt").read()
+alist = adata.splitlines()
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container5 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+乙班學員網誌:&lt;/p&gt;
+&lt;div id="container6"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script6"&gt;
+from browser import document, html
+from script5 import alist
+container6 = document['container6']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw/blog")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container6 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+乙班學員 wiki:&lt;/p&gt;
+&lt;div id="container7"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script7"&gt;
+from browser import document, html
+from script5 import alist
+container7 = document['container7']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://github.com/s"+str(stud_num)+"/2016fallcp_hw/wiki")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container7 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+乙班學員倉儲:&lt;/p&gt;
+&lt;div id="container8"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script8"&gt;
+from browser import document, html
+from script5 import alist
+container8 = document['container8']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://github.com/s"+str(stud_num)+"/2016fallcp_hw")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container8 &lt;= mlink
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;
+上述連結代表處理程式:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
+&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
+&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
+
+甲班學員投影片:
+
+&lt;div id="container1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+from browser import document, html
+container1 = document['container1']
+adata = open("./../users/a.txt").read()
+alist = adata.splitlines()
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container1 &lt;= mlink
+&lt;/script&gt;
+
+&lt;br /&gt;
+甲班學員網誌:
+
+&lt;div id="container2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script2"&gt;
+from browser import document, html
+# 學員選課名單直接從 id 為 script1 的程式段中導入
+from script1 import alist
+container2 = document['container2']
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw/blog")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container2 &lt;= mlink
+&lt;/script&gt;
+&lt;/pre&gt;</summary><category term="評分"></category></entry><entry><title>2016Fall CP 期中練習</title><link href="./2016fall-cp-qi-zhong-lian-xi.html" rel="alternate"></link><published>2016-11-04T12:00:00+08:00</published><updated>2016-11-04T12:00:00+08:00</updated><author><name>s40523245</name></author><id>tag:,2016-11-04:./2016fall-cp-qi-zhong-lian-xi.html</id><summary type="html">&lt;p&gt;從 &lt;a href="http://www.rfc-editor.org/search/rfc_search_detail.php?page=All&amp;title=ipv6&amp;pubstatus%5B%5D=Any&amp;pub_date_type=any&amp;sortkey=Number&amp;sorting=ASC%22"&gt;IPV6 相關 RFCs 查詢&lt;/a&gt;得到的資料中, 如何在各組的網誌中整理一份能夠連結到各個未過時 (non-obsolete) 的 RFC 文件?&lt;/p&gt;
+
+
+&lt;p&gt;參考程式碼:&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+data = open("midterm_list.txt").read()
+line_list = data.splitlines()
+count = 0
+for line in line_list:
+    each_line_list = line.split("\t")
+    try:
+        if "Obsoleted" in each_line_list[5]:
+            count = count + 1
+            print(each_line_list[0])
+    except:
+        pass
+print(count)
+&lt;/pre&gt;
+
+&lt;p&gt;接下來使用 Brython 程式碼, 將程式執行結果直接顯示在網頁上.&lt;/p&gt;
+&lt;p&gt;尚未失效的 IPV6 相關 RFC 如下:&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
+
+&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
+
+&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
+
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+from browser import document, html
+container = document['container']
+data = open("./../midterm_list.txt").read()
+line_list = data.splitlines()
+count = 0
+output = ""
+for line in line_list:
+    each_line_list = line.split("\t")
+    try:
+        if "Obsoleted" not in each_line_list[5]:
+            count = count + 1
+            output += html.A(each_line_list[0], href="http://www.rfc-editor.org/info/"+ each_line_list[0].lower().replace(" ", "")) + " | "
+            if count%10 == 0:
+                output += html.BR()
+    except:
+        pass
+output += html.BR() + html.BR()  + "共有 " + str(count)+ " 份文件尚未失效!"
+container &lt;= output
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;提供上述結果的 Brython 程式如下:
+&lt;br /&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+from browser import document, html
+container = document['container']
+data = open("./../midterm_list.txt").read()
+line_list = data.splitlines()
+count = 0
+output = ""
+for line in line_list:
+    each_line_list = line.split("\t")
+    try:
+        if "Obsoleted" not in each_line_list[5]:
+            count = count + 1
+            output += html.A(each_line_list[0], href="http://www.rfc-editor.org/info/"+ each_line_list[0].lower().replace(" ", "")) + " | "
+            if count%10 == 0:
+                output += html.BR()
+    except:
+        pass
+output += html.BR() + html.BR()  + "共有 " + str(count)+ " 份文件尚未失效!"
+container &lt;= output
+&lt;/script&gt;
+&lt;/pre&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題-12345</title><link href="./2016fall-cheng-shi-lian-xi-ti-12345.html" rel="alternate"></link><published>2016-10-31T12:00:00+08:00</published><updated>2016-10-31T12:00:00+08:00</updated><author><name>s40523239</name></author><id>tag:,2016-10-31:./2016fall-cheng-shi-lian-xi-ti-12345.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
 
 
 &lt;p&gt;研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題-1234</title><link href="./2016fall-cheng-shi-lian-xi-ti-1234.html" rel="alternate"></link><published>2016-10-24T12:00:00+08:00</published><updated>2016-10-24T12:00:00+08:00</updated><author><name>s40523239</name></author><id>tag:,2016-10-24:./2016fall-cheng-shi-lian-xi-ti-1234.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
